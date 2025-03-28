@@ -3,7 +3,7 @@ import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 
 @Component({
-  selector: 'hero-widget',
+  selector: 'ahorrar-hero-widget',
   imports: [ButtonModule, RippleModule],
   template: `
     <div
@@ -13,12 +13,12 @@ import { RippleModule } from 'primeng/ripple';
     >
       <div class="mx-6 md:mx-20 mt-0 md:mt-6">
         <h1 class="text-6xl font-bold text-gray-900 leading-tight">
-          <span class="font-light block">Eu sem integer</span>eget magna fermentum
+          <span class="font-light block">Ahorra tu dinero</span>consiguiendo mejores presupuestos
         </h1>
         <p class="font-normal text-2xl leading-normal md:mt-4 text-gray-700">
-          Sed blandit libero volutpat sed cras. Fames ac turpis egestas integer. Placerat in egestas erat...
+          Carga tu presupuesto, invita a tus proveedores y te ayudamos a ahorrar
         </p>
-        <button pButton pRipple [rounded]="true" type="button" label="Get Started" class="!text-xl mt-8 !px-4"></button>
+        <button pButton pRipple [rounded]="true" type="button" class="!text-xl mt-8 !px-4">Comencemos!</button>
       </div>
       <div class="flex justify-center md:justify-end">
         <img
