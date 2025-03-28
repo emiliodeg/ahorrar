@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { CarouselModule } from 'primeng/carousel';
 import { GalleriaModule } from 'primeng/galleria';
@@ -72,6 +72,9 @@ import { Product, ProductService } from '../service/product.service';
   providers: [ProductService, PhotoService]
 })
 export class MediaDemo implements OnInit {
+  private productService = inject(ProductService);
+  private photoService = inject(PhotoService);
+
   products!: Product[];
 
   images!: any[];
@@ -112,11 +115,6 @@ export class MediaDemo implements OnInit {
       numScroll: 1
     }
   ];
-
-  constructor(
-    private productService: ProductService,
-    private photoService: PhotoService
-  ) {}
 
   ngOnInit() {
     this.productService.getProductsSmall().then((products) => {

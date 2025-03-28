@@ -1,4 +1,4 @@
-import { Component, Renderer2, ViewChild } from '@angular/core';
+import { Component, Renderer2, ViewChild, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { filter, Subscription } from 'rxjs';
@@ -24,6 +24,10 @@ import { LayoutService } from '../service/layout.service';
   </div> `
 })
 export class AppLayout {
+  layoutService = inject(LayoutService);
+  renderer = inject(Renderer2);
+  router = inject(Router);
+
   overlayMenuOpenSubscription: Subscription;
 
   menuOutsideClickListener: any;
@@ -32,11 +36,7 @@ export class AppLayout {
 
   @ViewChild(AppTopbar) appTopBar!: AppTopbar;
 
-  constructor(
-    public layoutService: LayoutService,
-    public renderer: Renderer2,
-    public router: Router
-  ) {
+  constructor() {
     this.overlayMenuOpenSubscription = this.layoutService.overlayOpen$.subscribe(() => {
       if (!this.menuOutsideClickListener) {
         this.menuOutsideClickListener = this.renderer.listen('document', 'click', (event) => {

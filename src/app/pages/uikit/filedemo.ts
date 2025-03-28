@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { FileUploadModule } from 'primeng/fileupload';
@@ -60,9 +60,9 @@ import { ToastModule } from 'primeng/toast';
   providers: [MessageService]
 })
 export class FileDemo {
-  uploadedFiles: any[] = [];
+  private messageService = inject(MessageService);
 
-  constructor(private messageService: MessageService) {}
+  uploadedFiles: any[] = [];
 
   onUpload(event: any) {
     for (const file of event.files) {

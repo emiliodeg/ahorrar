@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import { Component, HostBinding, Input, inject } from '@angular/core';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Subscription } from 'rxjs';
@@ -94,6 +94,9 @@ import { LayoutService } from '../service/layout.service';
   providers: [LayoutService]
 })
 export class AppMenuitem {
+  router = inject(Router);
+  private layoutService = inject(LayoutService);
+
   @Input() item!: MenuItem;
 
   @Input() index!: number;
@@ -110,10 +113,7 @@ export class AppMenuitem {
 
   key: string = '';
 
-  constructor(
-    public router: Router,
-    private layoutService: LayoutService
-  ) {
+  constructor() {
     this.menuSourceSubscription = this.layoutService.menuSource$.subscribe((value) => {
       Promise.resolve(null).then(() => {
         if (value.routeEvent) {

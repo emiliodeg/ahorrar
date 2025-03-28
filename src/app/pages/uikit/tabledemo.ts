@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, inject } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { InputTextModule } from 'primeng/inputtext';
 import { MultiSelectModule } from 'primeng/multiselect';
@@ -528,6 +528,9 @@ interface expandedRows {
   providers: [ConfirmationService, MessageService, CustomerService, ProductService]
 })
 export class TableDemo implements OnInit {
+  private customerService = inject(CustomerService);
+  private productService = inject(ProductService);
+
   customers1: Customer[] = [];
 
   customers2: Customer[] = [];
@@ -557,11 +560,6 @@ export class TableDemo implements OnInit {
   loading: boolean = true;
 
   @ViewChild('filter') filter!: ElementRef;
-
-  constructor(
-    private customerService: CustomerService,
-    private productService: ProductService
-  ) {}
 
   ngOnInit() {
     this.customerService.getCustomersLarge().then((customers) => {
