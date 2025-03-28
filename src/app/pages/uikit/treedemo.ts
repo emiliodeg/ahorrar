@@ -3,13 +3,13 @@ import { TreeNode } from 'primeng/api';
 import { TreeModule } from 'primeng/tree';
 import { FormsModule } from '@angular/forms';
 import { TreeTableModule } from 'primeng/treetable';
-import { CommonModule } from '@angular/common';
+
 import { NodeService } from '../service/node.service';
 
 @Component({
   selector: 'ahorrar-tree-demo',
   standalone: true,
-  imports: [CommonModule, FormsModule, TreeModule, TreeTableModule],
+  imports: [FormsModule, TreeModule, TreeTableModule],
   template: `
     <div class="card">
       <div class="font-semibold text-xl">Tree</div>
@@ -29,18 +29,26 @@ import { NodeService } from '../service/node.service';
       >
         <ng-template #header let-columns>
           <tr>
-            <th *ngFor="let col of columns">
-              {{ col.header }}
-            </th>
+            @for (col of columns; track col) {
+              <th>
+                {{ col.header }}
+              </th>
+            }
           </tr>
         </ng-template>
         <ng-template #body let-rowNode let-rowData="rowData" let-columns="columns">
           <tr [ttRow]="rowNode" [ttSelectableRow]="rowNode">
-            <td *ngFor="let col of columns; let i = index">
-              <p-treeTableToggler [rowNode]="rowNode" *ngIf="i === 0" />
-              <p-treeTableCheckbox [value]="rowNode" *ngIf="i === 0" />
-              {{ rowData[col.field] }}
-            </td>
+            @for (col of columns; track col; let i = $index) {
+              <td>
+                @if (i === 0) {
+                  <p-treeTableToggler [rowNode]="rowNode" />
+                }
+                @if (i === 0) {
+                  <p-treeTableCheckbox [value]="rowNode" />
+                }
+                {{ rowData[col.field] }}
+              </td>
+            }
           </tr>
         </ng-template>
       </p-treetable>

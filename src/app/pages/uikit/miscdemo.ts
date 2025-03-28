@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
@@ -16,7 +15,6 @@ import { TagModule } from 'primeng/tag';
   selector: 'ahorrar-misc-demo',
   standalone: true,
   imports: [
-    CommonModule,
     ProgressBarModule,
     BadgeModule,
     AvatarModule,
