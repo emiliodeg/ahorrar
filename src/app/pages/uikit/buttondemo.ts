@@ -6,7 +6,7 @@ import { SplitButtonModule } from 'primeng/splitbutton';
 
 @Component({
   selector: 'ahorrar-button-demo',
-  standalone: true,
+
   imports: [ButtonModule, ButtonGroupModule, SplitButtonModule],
   template: `<div class="flex flex-col md:flex-row gap-8">
     <div class="md:w-1/2">

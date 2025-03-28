@@ -14,7 +14,7 @@ import { Product, ProductService } from '../service/product.service';
 
 @Component({
   selector: 'ahorrar-overlay-demo',
-  standalone: true,
+
   imports: [
     ToastModule,
     DialogModule,

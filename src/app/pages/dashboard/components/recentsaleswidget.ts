@@ -6,7 +6,6 @@ import { CommonModule } from '@angular/common';
 import { Product, ProductService } from '../../service/product.service';
 
 @Component({
-  standalone: true,
   selector: 'ahorrar-recent-sales-widget',
   imports: [CommonModule, TableModule, ButtonModule, RippleModule],
   template: `<div class="card !mb-8">

@@ -10,7 +10,7 @@ import { AppFloatingConfigurator } from '../../layout/component/app.floatingconf
 
 @Component({
   selector: 'ahorrar-login',
-  standalone: true,
+
   imports: [
     ButtonModule,
     CheckboxModule,

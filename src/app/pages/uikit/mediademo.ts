@@ -10,7 +10,7 @@ import { Product, ProductService } from '../service/product.service';
 
 @Component({
   selector: 'ahorrar-media-demo',
-  standalone: true,
+
   imports: [CommonModule, CarouselModule, ButtonModule, GalleriaModule, ImageModule, TagModule],
   template: `<div class="card">
       <div class="font-semibold text-xl mb-4">Carousel</div>

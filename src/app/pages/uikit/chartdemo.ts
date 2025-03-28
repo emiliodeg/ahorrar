@@ -6,7 +6,7 @@ import { LayoutService } from '../../layout/service/layout.service';
 
 @Component({
   selector: 'ahorrar-chart-demo',
-  standalone: true,
+
   imports: [ChartModule, FluidModule],
   template: `
     <p-fluid class="grid grid-cols-12 gap-8">

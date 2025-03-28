@@ -19,7 +19,7 @@ import { ToolbarModule } from 'primeng/toolbar';
 
 @Component({
   selector: 'ahorrar-panels-demo',
-  standalone: true,
+
   imports: [
     CommonModule,
     FormsModule,

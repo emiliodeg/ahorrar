@@ -5,7 +5,7 @@ import { AppFloatingConfigurator } from '../../layout/component/app.floatingconf
 
 @Component({
   selector: 'ahorrar-notfound',
-  standalone: true,
+
   imports: [RouterModule, AppFloatingConfigurator, ButtonModule],
   template: `<ahorrar-floating-configurator />
     <div class="flex items-center justify-center min-h-screen overflow-hidden">

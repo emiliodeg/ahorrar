@@ -6,7 +6,7 @@ import { AppMenuitem } from './app.menuitem';
 
 @Component({
   selector: 'ahorrar-menu',
-  standalone: true,
+
   imports: [AppMenuitem, RouterModule],
   template: `<ul class="layout-menu">
     @for (item of model; track item; let i = $index) {

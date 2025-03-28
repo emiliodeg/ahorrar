@@ -6,7 +6,7 @@ import { ToastModule } from 'primeng/toast';
 
 @Component({
   selector: 'ahorrar-file-demo',
-  standalone: true,
+
   imports: [FileUploadModule, ToastModule, ButtonModule],
   template: `<p-toast />
     <div class="grid grid-cols-12 gap-8">

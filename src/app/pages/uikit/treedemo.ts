@@ -8,7 +8,7 @@ import { NodeService } from '../service/node.service';
 
 @Component({
   selector: 'ahorrar-tree-demo',
-  standalone: true,
+
   imports: [FormsModule, TreeModule, TreeTableModule],
   template: `
     <div class="card">

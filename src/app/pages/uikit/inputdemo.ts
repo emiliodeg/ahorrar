@@ -33,7 +33,7 @@ import { Country } from '../service/customer.service';
 
 @Component({
   selector: 'ahorrar-input-demo',
-  standalone: true,
+
   imports: [
     FormsModule,
     InputTextModule,

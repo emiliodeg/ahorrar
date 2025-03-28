@@ -25,7 +25,7 @@ interface expandedRows {
 
 @Component({
   selector: 'ahorrar-table-demo',
-  standalone: true,
+
   imports: [
     TableModule,
     MultiSelectModule,

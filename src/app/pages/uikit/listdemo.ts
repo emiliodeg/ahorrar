@@ -11,7 +11,7 @@ import { Product, ProductService } from '../service/product.service';
 
 @Component({
   selector: 'ahorrar-list-demo',
-  standalone: true,
+
   imports: [
     CommonModule,
     DataViewModule,

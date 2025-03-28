@@ -16,7 +16,7 @@ import { InputIcon, InputIconModule } from 'primeng/inputicon';
 
 @Component({
   selector: 'ahorrar-menu-demo',
-  standalone: true,
+
   imports: [
     BreadcrumbModule,
     TieredMenuModule,

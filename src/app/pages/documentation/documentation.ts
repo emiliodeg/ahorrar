@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'ahorrar-documentation',
-  standalone: true,
+
   imports: [],
   template: `
     <div class="card">

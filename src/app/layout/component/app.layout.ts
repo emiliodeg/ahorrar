@@ -9,7 +9,7 @@ import { LayoutService } from '../service/layout.service';
 
 @Component({
   selector: 'ahorrar-layout',
-  standalone: true,
+
   imports: [CommonModule, AppTopbar, AppSidebar, RouterModule, AppFooter],
   template: `<div class="layout-wrapper" [ngClass]="containerClass">
     <ahorrar-topbar></ahorrar-topbar>

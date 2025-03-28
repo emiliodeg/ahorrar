@@ -8,7 +8,7 @@ import { TextareaModule } from 'primeng/textarea';
 
 @Component({
   selector: 'ahorrar-formlayout-demo',
-  standalone: true,
+
   imports: [InputTextModule, FluidModule, ButtonModule, SelectModule, FormsModule, TextareaModule],
   template: `<p-fluid>
     <div class="flex flex-col md:flex-row gap-8">

@@ -6,7 +6,7 @@ import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'ahorrar-timeline-demo',
-  standalone: true,
+
   imports: [CommonModule, TimelineModule, ButtonModule, CardModule],
   template: ` <div class="grid grid-cols-12 gap-8">
     <div class="col-span-6">

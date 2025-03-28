@@ -6,7 +6,7 @@ import { AppFloatingConfigurator } from '../../layout/component/app.floatingconf
 
 @Component({
   selector: 'ahorrar-access',
-  standalone: true,
+
   imports: [ButtonModule, RouterModule, RippleModule, AppFloatingConfigurator, ButtonModule],
   template: ` <ahorrar-floating-configurator />
     <div

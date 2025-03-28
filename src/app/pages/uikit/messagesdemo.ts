@@ -8,7 +8,7 @@ import { ToastModule } from 'primeng/toast';
 
 @Component({
   selector: 'ahorrar-messages-demo',
-  standalone: true,
+
   imports: [ToastModule, ButtonModule, InputTextModule, MessageModule, FormsModule],
   template: `
     <div class="flex flex-col md:flex-row gap-8">

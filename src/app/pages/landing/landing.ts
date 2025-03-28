@@ -13,7 +13,7 @@ import { FooterWidget } from './components/footerwidget';
 
 @Component({
   selector: 'ahorrar-landing',
-  standalone: true,
+
   imports: [
     RouterModule,
     TopbarWidget,

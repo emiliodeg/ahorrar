@@ -13,7 +13,7 @@ import { TagModule } from 'primeng/tag';
 
 @Component({
   selector: 'ahorrar-misc-demo',
-  standalone: true,
+
   imports: [
     ProgressBarModule,
     BadgeModule,
