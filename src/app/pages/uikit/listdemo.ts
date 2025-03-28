@@ -10,7 +10,7 @@ import { TagModule } from 'primeng/tag';
 import { Product, ProductService } from '../service/product.service';
 
 @Component({
-  selector: 'app-list-demo',
+  selector: 'ahorrar-list-demo',
   standalone: true,
   imports: [
     CommonModule,

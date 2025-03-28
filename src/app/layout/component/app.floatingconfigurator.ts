@@ -5,7 +5,7 @@ import { AppConfigurator } from './app.configurator';
 import { LayoutService } from '../service/layout.service';
 
 @Component({
-  selector: 'app-floating-configurator',
+  selector: 'ahorrar-floating-configurator',
   imports: [ButtonModule, StyleClassModule, AppConfigurator],
   template: `
     <div class="fixed flex gap-4 top-8 right-8">
@@ -28,7 +28,7 @@ import { LayoutService } from '../service/layout.service';
           type="button"
           rounded
         />
-        <app-configurator />
+        <ahorrar-configurator />
       </div>
     </div>
   `

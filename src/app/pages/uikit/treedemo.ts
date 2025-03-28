@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 import { NodeService } from '../service/node.service';
 
 @Component({
-  selector: 'app-tree-demo',
+  selector: 'ahorrar-tree-demo',
   standalone: true,
   imports: [CommonModule, FormsModule, TreeModule, TreeTableModule],
   template: `

@@ -7,7 +7,7 @@ import { AppConfigurator } from './app.configurator';
 import { LayoutService } from '../service/layout.service';
 
 @Component({
-  selector: 'app-topbar',
+  selector: 'ahorrar-topbar',
   standalone: true,
   imports: [RouterModule, CommonModule, StyleClassModule, AppConfigurator],
   template: ` <div class="layout-topbar">
@@ -67,7 +67,7 @@ import { LayoutService } from '../service/layout.service';
           >
             <i class="pi pi-palette"></i>
           </button>
-          <app-configurator />
+          <ahorrar-configurator />
         </div>
       </div>
 

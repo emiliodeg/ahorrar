@@ -9,8 +9,7 @@ import { MenuItem } from 'primeng/api';
 import { LayoutService } from '../service/layout.service';
 
 @Component({
-  // eslint-disable-next-line @angular-eslint/component-selector
-  selector: '[app-menuitem]',
+  selector: '[ahorrar-menuitem]',
   imports: [CommonModule, RouterModule, RippleModule],
   template: `
     <ng-container>
@@ -60,7 +59,7 @@ import { LayoutService } from '../service/layout.service';
 
       <ul *ngIf="item.items && item.visible !== false" [@children]="submenuAnimation">
         <ng-template ngFor let-child let-i="index" [ngForOf]="item.items">
-          <li app-menuitem [item]="child" [index]="i" [parentKey]="key" [class]="child['badgeClass']"></li>
+          <li ahorrar-menuitem [item]="child" [index]="i" [parentKey]="key" [class]="child['badgeClass']"></li>
         </ng-template>
       </ul>
     </ng-container>

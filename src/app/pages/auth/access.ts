@@ -5,10 +5,10 @@ import { RippleModule } from 'primeng/ripple';
 import { AppFloatingConfigurator } from '../../layout/component/app.floatingconfigurator';
 
 @Component({
-  selector: 'app-access',
+  selector: 'ahorrar-access',
   standalone: true,
   imports: [ButtonModule, RouterModule, RippleModule, AppFloatingConfigurator, ButtonModule],
-  template: ` <app-floating-configurator />
+  template: ` <ahorrar-floating-configurator />
     <div
       class="bg-surface-50 dark:bg-surface-950 flex items-center justify-center min-h-screen min-w-[100vw] overflow-hidden"
     >

@@ -6,7 +6,7 @@ import { debounceTime, Subscription } from 'rxjs';
 import { LayoutService } from '../../layout/service/layout.service';
 
 @Component({
-  selector: 'app-chart-demo',
+  selector: 'ahorrar-chart-demo',
   standalone: true,
   imports: [CommonModule, ChartModule, FluidModule],
   template: `

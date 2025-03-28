@@ -13,7 +13,7 @@ import { TableModule } from 'primeng/table';
 import { Product, ProductService } from '../service/product.service';
 
 @Component({
-  selector: 'app-overlay-demo',
+  selector: 'ahorrar-overlay-demo',
   standalone: true,
   imports: [
     ToastModule,

@@ -24,7 +24,7 @@ interface expandedRows {
 }
 
 @Component({
-  selector: 'app-table-demo',
+  selector: 'ahorrar-table-demo',
   standalone: true,
   imports: [
     TableModule,

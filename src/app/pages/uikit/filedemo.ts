@@ -6,7 +6,7 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { ToastModule } from 'primeng/toast';
 
 @Component({
-  selector: 'app-file-demo',
+  selector: 'ahorrar-file-demo',
   standalone: true,
   imports: [CommonModule, FileUploadModule, ToastModule, ButtonModule],
   template: `<p-toast />

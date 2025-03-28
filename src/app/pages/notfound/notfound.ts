@@ -4,10 +4,10 @@ import { ButtonModule } from 'primeng/button';
 import { AppFloatingConfigurator } from '../../layout/component/app.floatingconfigurator';
 
 @Component({
-  selector: 'app-notfound',
+  selector: 'ahorrar-notfound',
   standalone: true,
   imports: [RouterModule, AppFloatingConfigurator, ButtonModule],
-  template: ` <app-floating-configurator />
+  template: `<ahorrar-floating-configurator />
     <div class="flex items-center justify-center min-h-screen overflow-hidden">
       <div class="flex flex-col items-center justify-center">
         <svg

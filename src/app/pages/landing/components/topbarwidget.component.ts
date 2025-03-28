@@ -47,7 +47,7 @@ import { ButtonModule } from 'primeng/button';
       pRipple
       class="lg:!hidden"
       pStyleClass="@next"
-      enterClass="hidden"
+      enterFromClass="hidden"
       leaveToClass="hidden"
       [hideOnOutsideClick]="true"
     >

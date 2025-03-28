@@ -32,7 +32,7 @@ import { TreeNode } from 'primeng/api';
 import { Country } from '../service/customer.service';
 
 @Component({
-  selector: 'app-input-demo',
+  selector: 'ahorrar-input-demo',
   standalone: true,
   imports: [
     CommonModule,

@@ -13,7 +13,7 @@ import { SkeletonModule } from 'primeng/skeleton';
 import { TagModule } from 'primeng/tag';
 
 @Component({
-  selector: 'app-misc-demo',
+  selector: 'ahorrar-misc-demo',
   standalone: true,
   imports: [
     CommonModule,

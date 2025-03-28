@@ -12,7 +12,7 @@ import { PricingWidget } from './components/pricingwidget';
 import { FooterWidget } from './components/footerwidget';
 
 @Component({
-  selector: 'app-landing',
+  selector: 'ahorrar-landing',
   standalone: true,
   imports: [
     RouterModule,
