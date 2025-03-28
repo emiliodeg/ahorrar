@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "format": "prettier --write \"**/*.{js,mjs,ts,mts,d.ts,html}\" --cache",
     "test": "ng test",
-    "serve:ssr:sakai-ng": "node dist/sakai-ng/server/server.mjs"
+    "serve:ssr:ahorrar": "node dist/ahorrar/server/server.mjs"
   },
   "private": true,
   "dependencies": {
