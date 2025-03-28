@@ -1,15 +1,15 @@
-import { Component, inject } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'footer-widget',
-  imports: [RouterModule],
+  selector: 'ahorrar-footer-widget',
+  imports: [RouterLink],
   template: `
     <div class="py-12 px-12 mx-0 mt-20 lg:mx-20">
       <div class="grid grid-cols-12 gap-4">
         <div class="col-span-12 md:col-span-2">
           <a
-            (click)="router.navigate(['/pages/landing'], { fragment: 'home' })"
+            routerLink="/pages/landing"
             class="flex flex-wrap items-center justify-center md:justify-start md:mb-0 mb-6 cursor-pointer"
           >
             <svg viewBox="0 0 54 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-14 mr-2">
@@ -111,6 +111,4 @@ import { Router, RouterModule } from '@angular/router';
     </div>
   `
 })
-export class FooterWidget {
-  router = inject(Router);
-}
+export class FooterWidget {}
