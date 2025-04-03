@@ -7,5 +7,6 @@ export default [
   { path: 'documentation', component: Documentation },
   { path: 'crud', component: Crud },
   { path: 'empty', component: Empty },
+  { path: 'quienes-somos', loadComponent: async () => await import('./about-page/about-page') },
   { path: '**', redirectTo: '/404' }
 ] as Routes;
