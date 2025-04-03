@@ -7,17 +7,17 @@ import { Notfound } from './app/pages/notfound/notfound';
 
 export const appRoutes: Routes = [
   { path: '', component: Landing },
-  {
-    path: '',
-    component: AppLayout,
-    children: [
-      { path: '', component: Dashboard },
-      { path: 'uikit', loadChildren: () => import('./app/pages/uikit/uikit.routes') },
-      { path: 'documentation', component: Documentation },
-      { path: 'pages', loadChildren: () => import('./app/pages/pages.routes') }
-    ]
-  },
-  { path: 'notfound', component: Notfound },
-  { path: 'auth', loadChildren: () => import('./app/pages/auth/auth.routes') },
+  // {
+  //   path: '',
+  //   component: AppLayout,
+  //   loadChildren: () => import('./app/pages/pages.routes')
+  //   // children: [
+  //   //   { path: '', component: Dashboard },
+  //   //   { path: 'uikit', loadChildren: () => import('./app/pages/uikit/uikit.routes') },
+  //   //   { path: 'documentation', component: Documentation }
+  //   // ]
+  // },
+  { path: '', loadChildren: () => import('./app/modules/auth/features/auth.routes') },
+  { path: '404', component: Notfound },
   { path: '**', redirectTo: '/notfound' }
 ];

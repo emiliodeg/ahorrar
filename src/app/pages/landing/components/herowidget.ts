@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 
 @Component({
   selector: 'ahorrar-hero-widget',
-  imports: [ButtonModule, RippleModule],
+  imports: [ButtonModule, RippleModule, RouterLink],
   template: `
     <div
       id="hero"
@@ -18,7 +19,7 @@ import { RippleModule } from 'primeng/ripple';
         <p class="font-normal text-2xl leading-normal md:mt-4 text-gray-700">
           Carga tu presupuesto, invita a tus proveedores y te ayudamos a ahorrar
         </p>
-        <button pButton pRipple [rounded]="true" type="button" class="!text-xl mt-8 !px-4">Comencemos!</button>
+        <a routerLink="/login" pButton pRipple [rounded]="true" class="!text-xl mt-8 !px-4">Comencemos!</a>
       </div>
       <div class="flex justify-center md:justify-end">
         <img

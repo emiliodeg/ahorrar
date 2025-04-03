@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
@@ -6,9 +6,9 @@ import { AppFloatingConfigurator } from '../../layout/component/app.floatingconf
 
 @Component({
   selector: 'ahorrar-access',
-
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [ButtonModule, RouterModule, RippleModule, AppFloatingConfigurator, ButtonModule],
-  template: ` <ahorrar-floating-configurator />
+  template: `<ahorrar-floating-configurator />
     <div
       class="bg-surface-50 dark:bg-surface-950 flex items-center justify-center min-h-screen min-w-[100vw] overflow-hidden"
     >

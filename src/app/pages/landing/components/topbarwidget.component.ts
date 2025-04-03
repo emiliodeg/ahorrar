@@ -73,7 +73,7 @@ import { SETTINGS_GLOBAL } from '@settings/settings';
         </li>
       </ul>
       <div class="flex border-t lg:border-t-0 border-surface py-4 lg:py-0 mt-4 lg:mt-0 gap-2">
-        <button pButton pRipple routerLink="/iniciar-sesion" [rounded]="true" [text]="true">Iniciar sesión</button>
+        <button pButton pRipple routerLink="/login" [rounded]="true" [text]="true">Iniciar sesión</button>
         <button pButton pRipple routerLink="/registrar" [rounded]="true">Registrate</button>
       </div>
     </div> `
