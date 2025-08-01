@@ -1,24 +1,29 @@
 import { provideHttpClient, withFetch } from '@angular/common/http';
-import { ApplicationConfig } from '@angular/core';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { provideRouter, withEnabledBlockingInitialNavigation, withInMemoryScrolling } from '@angular/router';
-import Aura from '@primeng/themes/aura';
-import { providePrimeNG } from 'primeng/config';
-import { appRoutes } from './app.routes';
+import { ApplicationConfig, provideZonelessChangeDetection } from '@angular/core';
+import { MAT_ICON_DEFAULT_OPTIONS } from '@angular/material/icon';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
-import { provideSettings } from '@settings/settings';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideRouter } from '@angular/router';
+import { provideSettings } from '@shared/providers/settings.provider';
+import { appRoutes } from './app.routes';
+import { provideEnvironment } from '@env';
+import { provideSupabase } from '@shared/providers/supabase.provider';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(
-      appRoutes,
-      withInMemoryScrolling({ anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled' }),
-      withEnabledBlockingInitialNavigation()
-    ),
+    provideRouter(appRoutes),
     provideHttpClient(withFetch()),
     provideAnimationsAsync(),
-    providePrimeNG({ theme: { preset: Aura, options: { darkModeSelector: '.app-dark' } } }),
     provideClientHydration(withEventReplay()),
-    provideSettings()
+    provideEnvironment(),
+    provideSupabase(),
+    provideSettings(),
+    provideZonelessChangeDetection(),
+    {
+      provide: MAT_ICON_DEFAULT_OPTIONS,
+      useValue: {
+        fontSet: 'material-symbols-outlined'
+      }
+    }
   ]
 };
