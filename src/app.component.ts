@@ -16,6 +16,16 @@ import { FooterComponent } from '@shared/ui/footer/footer.component';
       grid-template-rows: auto 1fr auto;
       min-height: 100dvh;
     }
+
+    main {
+      padding-top: 64px;
+    }
+    
+    ahorrar-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 10;
+    }
   `
 })
 export class AppComponent {}

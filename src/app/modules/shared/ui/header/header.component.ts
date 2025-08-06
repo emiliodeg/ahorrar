@@ -3,12 +3,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterLink } from '@angular/router';
+import { SETTINGS_GLOBAL } from '@shared/providers/settings.provider';
 import { AuthService } from '@shared/services/auth.service';
 @Component({
   selector: 'ahorrar-header',
   imports: [RouterLink, MatToolbarModule, MatButtonModule, MatIconModule],
   template: `<mat-toolbar class="justify-between">
-    <h1 class="text-2xl font-bold text-blue-600"><a routerLink="/">Ahorrar</a></h1>
+    <h1>
+      <a routerLink="/" class="text-2xl font-bold text-blue-600 flex items-center gap-1"><mat-icon>savings</mat-icon>{{ settings.title }}</a>
+    </h1>
 
     <div class="flex items-center space-x-3">
       @if (auth.hasUser()) {
@@ -24,7 +27,8 @@ import { AuthService } from '@shared/services/auth.service';
           <mat-icon>logout</mat-icon>
         </button>
       } @else {
-        <a routerLink="/login" matButton>Iniciar sesión</a>
+        <a routerLink="/login" matButton="outlined">Iniciar sesión</a>
+        <a routerLink="/login" matButton="filled">Registrarse</a>
       }
     </div>
   </mat-toolbar>`,
@@ -37,6 +41,7 @@ import { AuthService } from '@shared/services/auth.service';
 })
 export class HeaderComponent {
   readonly auth = inject(AuthService);
+  readonly settings = inject(SETTINGS_GLOBAL);
 
   handleLogout() {
     throw new Error('Method not implemented.');

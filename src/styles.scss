@@ -1,2 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
-@use './styles/styles.scss';
+@use '@angular/material' as mat;
+@use './styles/themes/bluetheme.css' as theme;
+@use './styles/_tailwind' as tw;
+
+:root {
+  @include mat.button-overrides((
+    tonal-container-shape: var(--mat-sys-corner-medium),
+    text-container-shape: var(--mat-sys-corner-medium),
+    protected-container-shape: var(--mat-sys-corner-medium),
+    outlined-container-shape: var(--mat-sys-corner-medium),
+    filled-container-shape: var(--mat-sys-corner-medium),
+  ));
+}

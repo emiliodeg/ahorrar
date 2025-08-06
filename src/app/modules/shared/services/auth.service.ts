@@ -11,9 +11,10 @@ export class AuthService {
   #supabase = inject(SUPABASE);
 
   #user = toSignal(from(this.#supabase.auth.getUser()).pipe(map(({ data }) => data)));
+  #session = toSignal(from(this.#supabase.auth.getSession()).pipe(map(({ data }) => data)));
 
-  hasUser = computed(() => !!this.#user()?.user);
-  getUser = computed(() => this.#user()?.user);
+  readonly hasUser = computed(() => this.#session()?.session != null);
+  readonly getUser = computed(() => this.#user()?.user);
 
   login(credentials: SignInWithPasswordCredentials) {
     return from(this.#supabase.auth.signInWithPassword(credentials));
