@@ -5,15 +5,17 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterLink } from '@angular/router';
 import { SETTINGS_GLOBAL } from '@shared/providers/settings.provider';
 import { AuthService } from '@shared/services/auth.service';
+import { ThemeSwitcherComponent } from "../theme-switcher/theme-switcher.component";
 @Component({
   selector: 'ahorrar-header',
-  imports: [RouterLink, MatToolbarModule, MatButtonModule, MatIconModule],
+  imports: [RouterLink, MatToolbarModule, MatButtonModule, MatIconModule, ThemeSwitcherComponent],
   template: `<mat-toolbar class="justify-between">
     <h1>
       <a routerLink="/" class="text-2xl font-bold text-blue-600 flex items-center gap-1"><mat-icon>savings</mat-icon>{{ settings.title }}</a>
     </h1>
 
     <div class="flex items-center space-x-3">
+      <ahorrar-theme-switcher />
       @if (auth.hasUser()) {
         <div class="text-right">
           <p class="text-sm font-medium text-gray-900">{{ auth.getUser()?.email }}</p>
