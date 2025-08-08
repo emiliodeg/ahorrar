@@ -3,21 +3,18 @@ import { SETTINGS_GLOBAL } from '@shared/providers/settings.provider';
 
 @Component({
   selector: 'ahorrar-footer',
-  imports: [],
   template: `
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="py-12">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
-          <h3
-            class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent mb-4"
-          >
+          <h3 class="text-2xl font-bold mb-4">
             {{ settings.title }}
           </h3>
-          <p class="text-gray-400 mb-6">La plataforma líder para conectar tus proyectos con los mejores proveedores</p>
-          <div class="flex justify-center space-x-6 text-sm text-gray-400">
-            <button disabled class="hover:text-white transition-colors">Términos de Servicio</button>
-            <button disabled class="hover:text-white transition-colors">Política de Privacidad</button>
-            <button disabled class="hover:text-white transition-colors">Contacto</button>
+          <p class="mb-6">La plataforma líder para conectar tus proyectos con los mejores proveedores</p>
+          <div class="flex justify-center space-x-6 text-sm">
+            <button disabled>Términos de Servicio</button>
+            <button disabled>Política de Privacidad</button>
+            <button disabled>Contacto</button>
           </div>
         </div>
       </div>
@@ -26,6 +23,7 @@ import { SETTINGS_GLOBAL } from '@shared/providers/settings.provider';
   styles: `
     :host {
       display: block;
+      background-color: var(--mat-sys-secondary-container);
     }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush

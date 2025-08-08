@@ -11,19 +11,19 @@ import { ThemeSwitcherComponent } from "../theme-switcher/theme-switcher.compone
   imports: [RouterLink, MatToolbarModule, MatButtonModule, MatIconModule, ThemeSwitcherComponent],
   template: `<mat-toolbar class="justify-between">
     <h1>
-      <a routerLink="/" class="text-2xl font-bold text-blue-600 flex items-center gap-1"><mat-icon>savings</mat-icon>{{ settings.title }}</a>
+      <a routerLink="/" class="text-2xl font-bold flex items-center gap-1"><mat-icon>savings</mat-icon>{{ settings.title }}</a>
     </h1>
 
     <div class="flex items-center space-x-3">
       <ahorrar-theme-switcher />
       @if (auth.hasUser()) {
         <div class="text-right">
-          <p class="text-sm font-medium text-gray-900">{{ auth.getUser()?.email }}</p>
-          <p class="text-xs text-gray-500 capitalize">User</p>
+          <p class="text-sm font-medium">{{ auth.getUser()?.email }}</p>
+          <p class="text-xs capitalize">User</p>
         </div>
         <button
           (click)="handleLogout()"
-          class="flex items-center space-x-2 text-gray-500 hover:text-red-600 p-2 transition-colors"
+          matIconButton
           title="Cerrar sesión"
         >
           <mat-icon>logout</mat-icon>

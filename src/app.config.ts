@@ -1,13 +1,13 @@
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { ApplicationConfig, provideZonelessChangeDetection } from '@angular/core';
-import { MAT_ICON_DEFAULT_OPTIONS } from '@angular/material/icon';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideRouter } from '@angular/router';
-import { provideSettings } from '@shared/providers/settings.provider';
-import { appRoutes } from './app.routes';
 import { provideEnvironment } from '@env';
+import { provideMaterialOptions } from '@shared/providers/material-options.provider';
+import { provideSettings } from '@shared/providers/settings.provider';
 import { provideSupabase } from '@shared/providers/supabase.provider';
+import { appRoutes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,11 +19,6 @@ export const appConfig: ApplicationConfig = {
     provideSupabase(),
     provideSettings(),
     provideZonelessChangeDetection(),
-    {
-      provide: MAT_ICON_DEFAULT_OPTIONS,
-      useValue: {
-        fontSet: 'material-symbols-outlined'
-      }
-    }
+    provideMaterialOptions()
   ]
 };
