@@ -6,7 +6,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { Router, RouterLink } from '@angular/router';
 import { SETTINGS_GLOBAL } from '@shared/providers/settings.provider';
 import { AuthService } from '@shared/services/auth.service';
@@ -69,13 +69,21 @@ import { AuthService } from '@shared/services/auth.service';
 
           <mat-form-field>
             <mat-label>Constraseña</mat-label>
-            <input matInput placeholder="••••••••" type="password" [formControl]="form.controls.password" />
-            <mat-icon matSuffix>visibility_off</mat-icon>
+            <input
+              matInput
+              placeholder="••••••••"
+              [type]="hiddenPassword() ? 'password' : 'text'"
+              name="password"
+              [formControl]="form.controls.password"
+            />
+            <mat-icon matSuffix (click)="void handleChange()">{{
+              hiddenPassword() ? 'visibility_off' : 'visibility'
+            }}</mat-icon>
           </mat-form-field>
 
           <div class="flex items-center justify-between gap-3 mb-3">
             <mat-checkbox>Recordarme</mat-checkbox>
-            <a routerLink="/recuperar" matButton class="text-sm"> ¿Olvidaste tu contraseña? </a>
+            <a routerLink="/recuperar" matButton class="text-sm"> ¿Olvidaste tu contraseña?</a>
           </div>
 
           <button type="submit" matButton="filled" [disabled]="form.invalid || form.untouched || loading()">
@@ -123,6 +131,11 @@ export default class LoginPageComponent {
   });
   readonly wrongCredentials = signal(false);
   readonly loading = signal(false);
+  readonly hiddenPassword = signal(true);
+
+  handleChange() {
+    this.hiddenPassword.update(value => !value);
+  }
 
   handleSubmit() {
     if (!this.form.valid) return;

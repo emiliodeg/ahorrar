@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { SETTINGS_GLOBAL } from '@shared/providers/settings.provider';
 import { AuthService } from '@shared/services/auth.service';
 import { ThemeSwitcherComponent } from "../theme-switcher/theme-switcher.component";
@@ -42,10 +42,13 @@ import { ThemeSwitcherComponent } from "../theme-switcher/theme-switcher.compone
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
+  readonly #router = inject(Router);
   readonly auth = inject(AuthService);
   readonly settings = inject(SETTINGS_GLOBAL);
 
   handleLogout() {
-    throw new Error('Method not implemented.');
+    this.auth.signOut().subscribe({
+      complete: () => this.#router.navigate(['/'])
+    });
   }
 }

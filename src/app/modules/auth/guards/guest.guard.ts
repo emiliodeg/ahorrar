@@ -1,9 +1,13 @@
 import { inject } from '@angular/core';
 import { CanActivateFn } from '@angular/router';
-import { AuthService } from '@shared/services/auth.service';
+import { SUPABASE } from '@shared/providers/supabase.provider';
 
-export const guestGuard: CanActivateFn = () => {
-  const auth = inject(AuthService);
+export const guestGuard: CanActivateFn = async () => {
+  const auth = inject(SUPABASE);
 
-  return !auth.hasUser();
+  const {
+    data: { session }
+  } = await auth.auth.getSession();
+
+  return !session;
 };
