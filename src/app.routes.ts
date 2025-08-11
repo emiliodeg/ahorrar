@@ -8,10 +8,19 @@ export const appRoutes: Routes = [
     canActivate: [guestGuard],
     loadComponent: async () => import('@auth/features/login-page/login-page.component')
   },
+  { path: '', loadComponent: async () => import('@pages/home/home-page.component'), pathMatch: 'full' },
   {
-    path: 'dashboard',
+    path: '',
     canActivate: [loggedInGuard],
-    loadComponent: async () => import('@dashboard/features/main-page/main-page.component')
-  },
-  { path: '', loadComponent: async () => import('@pages/home/home-page.component') }
+    children: [
+      {
+        path: 'dashboard',
+        loadComponent: async () => import('@dashboard/features/main-page/main-page.component')
+      },
+      {
+        path: 'presupuestar',
+        loadComponent: async () => import('@budgets/features/create-page/create-page.component')
+      }
+    ]
+  }
 ];
