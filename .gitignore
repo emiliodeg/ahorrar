@@ -47,3 +47,6 @@ src/environments/*
 !src/environments/environment.provider.ts
 !src/environments/environment.model.ts
 !src/environments/environment.ts
+
+# Local Netlify folder
+.netlify
