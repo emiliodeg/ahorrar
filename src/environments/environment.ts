@@ -1,10 +1,10 @@
 import { Environment } from './environment.model';
 
 export const environment: Environment = {
-  production: process?.env['NODE_ENV'] === 'production',
-  baseUrl: process?.env['BASE_URL'] || '',
+  production: true,
+  baseUrl: 'https://ahorr.ar',
   supabase: {
-    apiUrl: process?.env['SUPABASE_DATABASE_URL'] || '',
-    key: process?.env['SUPABASE_ANON_KEY'] || ''
+    apiUrl: 'https://uiawjtonnxdkjovgsrom.supabase.co',
+    key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVpYXdqdG9ubnhka2pvdmdzcm9tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM5OTMyOTAsImV4cCI6MjA2OTU2OTI5MH0.1aZEBngXHbM93MrGhqEko1CwYrlXT-6yWGczqEeE_Cs'
   }
 };
