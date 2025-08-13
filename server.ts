@@ -1,16 +1,13 @@
-import { AngularAppEngine, createRequestHandler } from '@angular/ssr'
-import { getContext } from '@netlify/angular-runtime/context.mjs'
+// From a forum post.  It didnt work.
+// if (typeof global === undefined) {
+//   globalThis.global = globalThis
+// }
 
-const angularAppEngine = new AngularAppEngine()
+import { CommonEngine } from '@angular/ssr/node';
+import { render } from '@netlify/angular-runtime';
 
-export const netlifyAppEngineHandler = async (request: Request): Promise<Response> => {
-  const context = getContext()
+const commonEngine = new CommonEngine();
 
-  const result = await angularAppEngine.handle(request, context)
-  return result || new Response('Not found', { status: 404 })
+export async function netlifyCommonEngineHandler(request: Request, context: any): Promise<Response> {
+  return await render(commonEngine);
 }
-
-/**
- * The request handler used by the Angular CLI (dev-server and during build).
- */
-export const reqHandler = createRequestHandler(netlifyAppEngineHandler)
