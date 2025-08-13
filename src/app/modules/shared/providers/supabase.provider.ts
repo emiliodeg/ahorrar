@@ -9,7 +9,8 @@ export const provideSupabase = () =>
   makeEnvironmentProviders([
     {
       provide: SUPABASE,
-      useFactory: (env: Environment) => createClient<Database>(env.supabase.apiUrl, env.supabase.key),
+      useFactory: (env: Environment) =>
+        createClient<Database>(env.supabase.apiUrl, env.supabase.key, { global: { fetch: fetch.bind(globalThis) } }),
       deps: [ENVIRONMENT]
     }
   ]);
