@@ -19,6 +19,6 @@ export const appConfig: ApplicationConfig = {
     provideSupabase(),
     provideSettings(),
     provideZonelessChangeDetection(),
-    provideMaterialOptions()
+    provideMaterialOptions(), provideClientHydration(withEventReplay())
   ]
 };
