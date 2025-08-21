@@ -3,9 +3,6 @@
   publish = "dist/ahorrar/browser"
   ignore="exit 1" 
 
-[[plugins]]
-  package="@netlify/angular-runtime"
-
 [[redirects]]
   from = "/*"
   status = 200
